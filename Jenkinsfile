@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent {
+        docker { image 'python:3.11' }
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -11,7 +12,7 @@ pipeline {
         stage('Setup Python') {
             steps {
                 sh '''
-                python3 -m venv venv
+                python -m venv venv
                 . venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
