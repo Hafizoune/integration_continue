@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ton-compte/ton-projet.git'
+                git branch: 'main', url: 'https://github.com/Hafizoune/integration_continue.git'
             }
         }
 
